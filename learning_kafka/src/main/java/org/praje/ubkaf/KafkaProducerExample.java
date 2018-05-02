@@ -9,7 +9,6 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 public class KafkaProducerExample {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String topicName = "test";
 		String key ="key1";
 		String value = "value11 for now";
@@ -19,7 +18,6 @@ public class KafkaProducerExample {
 		properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");         
 		properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		
-		System.out.println("this is good");
 		Producer<String, String> producer = new KafkaProducer<String, String>(properties);
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>(topicName, key, value);
 		producer.send(record);
