@@ -12,10 +12,10 @@ public class KafkaProducerExample {
 		// TODO Auto-generated method stub
 		String topicName = "test";
 		String key ="key1";
-		String value = "value11";
+		String value = "value11 for now";
 		
 		Properties properties = new Properties();
-		properties.put("bootstrap.servers", "192.168.1.36:9092,192.168.1.36:9093");
+		properties.put("bootstrap.servers", "192.168.1.38:9092,localhost:9093");
 		properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");         
 		properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		
@@ -23,6 +23,7 @@ public class KafkaProducerExample {
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>(topicName, key, value);
 		producer.send(record);
 		producer.close();
+		System.out.println("finish");
 		
 		
 	}
