@@ -19,6 +19,7 @@ public class KafkaProducerExample {
 		properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");         
 		properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		
+		
 		Producer<String, String> producer = new KafkaProducer<String, String>(properties);
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>(topicName, key, value);
 		producer.send(record);
