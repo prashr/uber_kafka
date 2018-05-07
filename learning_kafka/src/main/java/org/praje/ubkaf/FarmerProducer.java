@@ -20,8 +20,8 @@ public class FarmerProducer {
 		
 		Producer<String, Farmer> producer = new KafkaProducer<String, Farmer>(properties);
 		
-		Farmer farmer1 = new Farmer("1", "123", "YTH");
-		Farmer farmer2 = new Farmer("2", "124", "BLR");
+		Farmer farmer1 = new Farmer("1", "123", "SING");
+		Farmer farmer2 = new Farmer("2", "124", "MYT");
 		
 		producer.send(new ProducerRecord<String, Farmer>(topicName, "FAR1", farmer1));
 		producer.send(new ProducerRecord<String, Farmer>(topicName, "FAR2", farmer2));
